@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Bilisim.HelloMvc.Models.ViewModels
+@model OgrenciDetayDTO
+@{
     Layout = null;
 }
 
@@ -34,5 +36,15 @@
         <p>Öğrenci Bulunamadı!</p>
     }
 
+    <h3>Model örneği</h3>
+    @if (Model != null)
+    {
+        <p>Model ile gelen öğrenci:@Model.Ogrenci.Ad</p>
+        <p>Öğrencinin danışman bilgisi: @Model.Ogretmen.Ad</p>
+    }
+    else
+    {
+        <p>Öğrenci Bulunamadı!</p>
+    }
 </body>
 </html>

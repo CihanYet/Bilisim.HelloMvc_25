@@ -1,4 +1,5 @@
 ﻿using Bilisim.HelloMvc.Models;
+using Bilisim.HelloMvc.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bilisim.HelloMvc.Controllers
@@ -13,19 +14,25 @@ namespace Bilisim.HelloMvc.Controllers
         {
 
             Ogrenci ogrenci = null;
+            Ogretmen ogrt = null;
 
             if (id == 1)
             {
                 ogrenci = new Ogrenci { Ogrenciid = 1, Ad = "Ali", Soyad = "Veli" };
+                ogrt = new Ogretmen { Id = 1, Ad = "Osman", Soyad = "Demir" };
             }
             else if (id == 2)
             {
                 ogrenci = new Ogrenci { Ogrenciid = 2, Ad = "Ahmet", Soyad = "Mehmet" };
-                
-            }            
+                ogrt = new Ogretmen { Id = 2, Ad = "Cafer", Soyad = "Gündüz" };
+
+            }
             ViewData["ogr"] = ogrenci;
             ViewBag.student = ogrenci;
-            return View();
+            ViewBag.ogretmen = ogrt;
+
+            var dto = new OgrenciDetayDTO { Ogrenci = ogrenci, Ogretmen = ogrt };
+            return View(dto);
         }
     }
 }
