@@ -22,10 +22,9 @@ namespace Bilisim.HelloMvc.Controllers
             {
                 ogrenci = new Ogrenci { Ogrenciid = 2, Ad = "Ahmet", Soyad = "Mehmet" };
                 
-            }
-            
+            }            
             ViewData["ogr"] = ogrenci;
-
+            ViewBag.student = ogrenci;
             return View();
         }
     }
@@ -34,5 +33,5 @@ namespace Bilisim.HelloMvc.Controllers
 //Controllerdan->View'e veri taşıma
 //1-ViewData: Koleksiyondur.Anahtar-Değer çiftinden oluşur. (Key-Value Pair)
 // Keyler tekil olmalıdır. Keyler string, Value'lar object'dir.
-//2-ViewBag
+//2-ViewBag: Dynamic bir yapıdır ve taşıdığı verinin türü, runtime sırasında belirlenir.
 //3-Model

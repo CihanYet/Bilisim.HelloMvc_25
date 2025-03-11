@@ -16,8 +16,18 @@
     @if (ViewData["ogr"] != null)
     {
         <p>
-            ViewData ile gelen öğrencinin bilgileri: @(((Ogrenci)ViewData["ogr"]).Ad)
+            ViewData ile gelen öğrencinin bilgileri: @(((Ogrenci)ViewData["ogr"]!).Ad)
         </p>
+    }
+    else
+    {
+        <p>Öğrenci Bulunamadı!</p>
+    }
+
+    <h3>ViewBag Örneği</h3>
+    @if (ViewBag.student != null)
+    {
+        <p>ViewBag ile gelen öğrenci:@ViewBag.student.Ad</p>
     }
     else
     {
