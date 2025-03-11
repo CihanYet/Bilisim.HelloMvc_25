@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OgrenciDetay</title>
+</head>
+<body>
+
+
+    <h3>ViewData örneği</h3>
+    @if (ViewData["ogr"] != null)
+    {
+        <p>
+            ViewData ile gelen öğrencinin bilgileri: @(((Ogrenci)ViewData["ogr"]).Ad)
+        </p>
+    }
+    else
+    {
+        <p>Öğrenci Bulunamadı!</p>
+    }
+
+</body>
+</html>
