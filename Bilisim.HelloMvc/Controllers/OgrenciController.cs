@@ -12,7 +12,6 @@ namespace Bilisim.HelloMvc.Controllers
         }
         public ViewResult OgrenciDetay(int id)
         {
-
             Ogrenci ogrenci = null;
             Ogretmen ogrt = null;
 
@@ -33,6 +32,24 @@ namespace Bilisim.HelloMvc.Controllers
 
             var dto = new OgrenciDetayDTO { Ogrenci = ogrenci, Ogretmen = ogrt };
             return View(dto);
+        }
+
+        public ViewResult OgrenciListe()
+        {
+            //2 adet öğrenci nesnesi oluştur
+            //Liste oluştur
+            //Öğrencileri listeye ekle
+            //Listeyi View'e gönder
+
+            Ogrenci ogrenci = new Ogrenci { Ogrenciid = 1, Ad = "Ali", Soyad = "Veli" };
+            Ogrenci ogrenci1 = new Ogrenci { Ogrenciid = 2, Ad = "Ahmet", Soyad = "Mehmet" };
+
+            List<Ogrenci> list = new List<Ogrenci>();
+            list.Add(ogrenci);
+            list.Add(ogrenci1);
+            //ViewBag.ogrenciler = list;
+
+            return View(list);
         }
     }
 }
