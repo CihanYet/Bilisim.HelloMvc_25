@@ -41,15 +41,22 @@ namespace Bilisim.HelloMvc.Controllers
             //Öğrencileri listeye ekle
             //Listeyi View'e gönder
 
-            Ogrenci ogrenci = new Ogrenci { Ogrenciid = 1, Ad = "Ali", Soyad = "Veli" };
-            Ogrenci ogrenci1 = new Ogrenci { Ogrenciid = 2, Ad = "Ahmet", Soyad = "Mehmet" };
 
-            List<Ogrenci> list = new List<Ogrenci>();
-            list.Add(ogrenci);
-            list.Add(ogrenci1);
+
+            //Ogrenci ogrenci = new Ogrenci { Ogrenciid = 1, Ad = "Ali", Soyad = "Veli" };
+            //Ogrenci ogrenci1 = new Ogrenci { Ogrenciid = 2, Ad = "Ahmet", Soyad = "Mehmet" };
+
+            //List<Ogrenci> list = new List<Ogrenci>();
+            //list.Add(ogrenci);
+            //list.Add(ogrenci1);
+
+            var lst = new List<Ogrenci>
+            {
+                new Ogrenci { Ogrenciid = 1, Ad = "Ali", Soyad = "Veli" },
+                new Ogrenci { Ogrenciid = 2, Ad = "Ahmet", Soyad = "Mehmet" }
+            };
             //ViewBag.ogrenciler = list;
-
-            return View(list);
+            return View(lst);
         }
     }
 }
