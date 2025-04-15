@@ -28,6 +28,12 @@
                         <li>
                             <a class="nav-link text-dark" href="/Ogrenci/OgrenciListe">Öğrenci Listesi</a>
                         </li>
+                        <li>
+                            @Html.ActionLink("Öğrenci Listesi","OgrenciListe","Ogrenci",null,new{@class="nav-link text-dark"})
+                        </li>
+                        <li>
+                            <a asp-action="OgrenciListe" asp-controller="Ogrenci" class="nav-link text-dark">Öğrenci Listesi</a>
+                        </li>
                     </ul>
                 </div>
             </div>
