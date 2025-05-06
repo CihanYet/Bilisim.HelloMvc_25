@@ -1,16 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Bilisim.EfApp
+namespace Bilisim.HelloMvc.Models
 {
-    internal class OkulDbContext:DbContext
+    public class OkulDbContext:DbContext
     {
-
-        
         public DbSet<Ogrenci> Ogrenciler { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -12,5 +12,6 @@ namespace Bilisim.EfApp
         public string Ad { get; set; }
         public string Soyad { get; set; }
 
+       
     }
 }
