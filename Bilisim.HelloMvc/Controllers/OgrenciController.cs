@@ -58,6 +58,23 @@ namespace Bilisim.HelloMvc.Controllers
             //ViewBag.ogrenciler = list;
             return View(lst);
         }
+
+        [HttpGet]
+        public ViewResult OgrenciEkle()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult OgrenciEkle(Ogrenci ogr)
+        {
+            using (var ctx=new OkulDbContext())
+            {
+                ctx.Ogrenciler.Add(ogr);
+                ctx.SaveChanges();
+            }
+            return View();
+        }
     }
 }
 
